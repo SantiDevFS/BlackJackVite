@@ -1,4 +1,4 @@
-import { pedirCarta, valorCarta } from './';
+import { pedirCarta, valorCarta , crearCartaHTML} from './';
 
 /**
  * // turno de la computadora
@@ -24,11 +24,10 @@ export  const turnoComputadora = ( puntosMinimos, puntosHTML,divCartasComputador
             puntosComputadora = puntosComputadora + valorCarta( carta );
             puntosHTML.innerText = puntosComputadora;
             
-             const imgCarta = document.createElement('img');
-            imgCarta.src = `/assets/cartas/${ carta }.png`; //3H, JD
-            imgCarta.classList.add('carta');
+            // <img class="carta" src="assets/cartas/2C.png">
+            const imgCarta = crearCartaHTML( carta );
             divCartasComputadora.append( imgCarta );
-
+            
             if ( puntosMinimos > 21 ) {
                 break;
             }
